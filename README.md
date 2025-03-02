@@ -42,6 +42,26 @@ By doing the above we finalized with a cleaned version of a correlation matrix.
 
 About the outliers, we detect the numerical features in the dataset containing any outliers by using boxplots to visualize and applying the IQR method.​ Boxplots shown are results after outlier removal. The majority of the outliers were removed, and further removal will be performed when the model performances are not meeting expectations.
 
+#### Group Comparison (Late Delivery Risk)
+
+We focused on understanding the distribution of key features across the two groups: on-time deliveries (Late Delivery Risk = 0) vs. late deliveries (Late Delivery Risk = 1). By analyzing categorical and numerical variables separately, we aimed to identify patterns and potential factors influencing delivery performance. For categorical variables, we conducted chi-square tests to evaluate whether there were significant differences in distributions between the two groups. 
+
+The results showed strong associations between shipping mode, order status, and delivery status with late deliveries, suggesting that these factors play a crucial role in predicting delivery delays. Some variables, like customer country and market, showed no statistically significant relationship, indicating that delivery risk might be more dependent on logistics factors rather than geographic location.
+
+For numerical variables, we used violin plots and box plots to compare distributions between the two groups. This helped us visualize whether specific features, such as order quantity, shipping cost, or product weight, differed significantly between late and on-time deliveries. Additionally, we analyzed correlations between numerical variables and delivery risk, identifying features that might contribute to late deliveries. The insights from this comparison provide an initial idea for feature selection and predictive modeling, ensuring that our analysis is data-driven and backed by statistical evidence.
+
+After doing the EDA, we concluded the following hypothesis:
+
+Hypothesis 1: Does the shipping mode (vs. first class or same day) increases the probability of late delivery? 
+Hypothesis 2: Does the payment type affects late delivery risk because of differences in order processing time?
+Hypothesis 3: Are orders from certain regions are causally more likely to experience late delivery due to logistical or infrastructural constraints?
+
+With these, the next step was to apply Causal Inference to determine whether these factors actually cause late deliveries or not. 
+
+#### Causal Inference 
 
 
+#### Modeling
 
+
+#### Conclusion
