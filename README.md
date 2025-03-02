@@ -58,10 +58,36 @@ Hypothesis 3: Are orders from certain regions are causally more likely to experi
 
 With these, the next step was to apply Causal Inference to determine whether these factors actually cause late deliveries or not. 
 
-#### Causal Inference 
+### Causal Inference 
 
+This project applies causal inference methods to investigate key factors affecting order delivery delays, with a special focus on the causal impact of shipping modes on delay risk. Through rigorous causal analysis, we discovered results that contradicted our initial hypotheses, providing data-driven support for logistics decision-making.
 
-#### Modeling
+#### Main Research Hypotheses
+
+We investigated three main hypotheses: first, exploring how shipping mode (standard vs. non-standard) affects the probability of late delivery; second, analyzing whether payment method influences delay risk; and finally, examining whether orders from specific regions (United States) are more likely to experience delivery delays.
+
+#### Key Findings
+
+**Impact of Shipping Mode on Delays**
+
+Our analysis shows that the delay risk for the standard shipping group is only 38.0%, while the non-standard shipping group has a delay risk as high as 79.6%, with a risk difference of -41.7 percentage points. This indicates that standard shipping actually significantly reduces delay risk, contrary to the direction of our initial hypothesis. The Individual Treatment Effects (ITE) distribution graph further confirms this finding, with most orders showing negative treatment effects, demonstrating that standard shipping generally reduces delay risk.
+
+**Feature Importance Analysis**
+
+Feature importance analysis using the permutation method revealed the key factors influencing the relationship between shipping mode and delay risk. Scheduled shipping days is the most significant factor, with importance approaching 1.0; economic factors (such as order profit, order total, and discount) have minimal influence, with importance between 0.1-0.2; order quantity has almost no impact on delay risk, with importance of only 0.05.
+
+**SHAP Value Analysis Insights**
+
+SHAP value analysis allowed us to understand more deeply how each feature influences model predictions. Scheduled shipping days showed an interesting pattern: standard shipping works best for orders with moderate delivery times, while it may actually increase risk for very short delivery times. Economic and quantity features are distributed relatively evenly on both sides of the Y-axis, indicating their positive and negative influences cancel each other out, with minimal impact on the final result. This aligns with our previous feature importance analysis.
+
+**Other Hypothesis Validation**
+
+Our validation of payment method and regional factors indicates that these factors have no significant causal impact on delay risk. Most effect values cluster around zero, indicating that even though the United States represents our largest order volume country, U.S. orders show no significant differences in delay risk. This further reinforces our previous finding: scheduled delivery time is the main factor affecting delay risk, not payment method or regional differences.
+
+#### Causal Inference Conclusion
+Our research found that scheduled shipping time is the main factor affecting delay risk, rather than payment method or regional differences. This suggests we should rethink our shipping strategy, focusing on the time requirements of orders rather than other factors. This finding not only challenges our initial hypothesis but also provides valuable data support for optimizing logistics decisions.
+
+### Modeling
 
 **Logistic Regression and Random Forest**
 
@@ -75,5 +101,9 @@ Logistic regression and Random Forest models were tested on a cross validation s
 From here, the random forest model was chosen to go through hyperparameter tuning. Since the dataset was so large (180,000 observations), GridSearchCV took a long time to run (~30 min). So we decided to use RandomizedSearchCV to conduct our hyperparameter tuning and got the parameters we were looking for and it took about 8 minutes to run. 
 
 The model was then trained on the whole training set and then tested on the test set, resulting in 89% accuracy, precision, and recall. The ROC curve and the confusion matrix further confirms excellent model performance. 
+
+**ANN**
+
+We deployed an Artificial Neural Network (ANN) with a three-layer architecture (128-64-32 neurons) to analyze delivery risk patterns. The model used a dropout rate of 0.2 and batch size of 64, converging quickly during training. The final test accuracy of 70.42%. Our feature selection process highlighted that "Days for shipment (scheduled)" and shipping mode were consistently the most influential variables across modeling approaches, aligning with our causal inference findings.
 
 #### Conclusion
