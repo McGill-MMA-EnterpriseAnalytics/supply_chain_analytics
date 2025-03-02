@@ -62,10 +62,18 @@ With these, the next step was to apply Causal Inference to determine whether the
 
 
 #### Modeling
+
+**Logistic Regression and Random Forest**
+
 Before getting started on the modelling, a feature importance was run using random forest to determine the most important features in our dataset in relation to late delivery risk. This will significantly help us improve model performance as without it, we were looking at around 1,500 features. 
+Since we were running a logistic regression model, the numerical columns had to be scaled and StandardScaler() was used to this job. For the categorical columns OneHotEncoding() was used as there were no ordinal columns in the dataset. Now, the data was fit for model training, testing, and tuning. 
 
 _LogisticRegression_RandomForest.ipynb_
 
-Logistic regression and Random Forest models were tested on a cross validation set using both top 50 features and top 20 features (20 because it was a good elbow cut-off range when looking at the feature importance plot). Top 20 features provided better results, with random forest providing great results in CV. Then random forest was chosen to train on the whole training set and then tested on the test set, resulting in 89% accuracy, precision, and recall. 
+Logistic regression and Random Forest models were tested on a cross validation set using both top 50 features and top 20 features (20 because it was a good elbow cut-off range when looking at the feature importance plot). Top 20 features provided better results, with random forest providing great results in CV. 
+
+From here, the random forest model was chosen to go through hyperparameter tuning. Since the dataset was so large (180,000 observations), GridSearchCV took a long time to run (~30 min). So we decided to use RandomizedSearchCV to conduct our hyperparameter tuning and got the parameters we were looking for and it took about 8 minutes to run. 
+
+The model was then trained on the whole training set and then tested on the test set, resulting in 89% accuracy, precision, and recall. The ROC curve and the confusion matrix further confirms excellent model performance. 
 
 #### Conclusion
