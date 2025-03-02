@@ -62,6 +62,10 @@ With these, the next step was to apply Causal Inference to determine whether the
 
 
 #### Modeling
+Before getting started on the modelling, a feature importance was run using random forest to determine the most important features in our dataset in relation to late delivery risk. This will significantly help us improve model performance as without it, we were looking at around 1,500 features. 
 
+_LogisticRegression_RandomForest.ipynb_
+
+Logistic regression and Random Forest models were tested on a cross validation set using both top 50 features and top 20 features (20 because it was a good elbow cut-off range when looking at the feature importance plot). Top 20 features provided better results, with random forest providing great results in CV. Then random forest was chosen to train on the whole training set and then tested on the test set, resulting in 89% accuracy, precision, and recall. 
 
 #### Conclusion
