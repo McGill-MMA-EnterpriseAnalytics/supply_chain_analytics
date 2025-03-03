@@ -21,7 +21,7 @@ In the initial phase of our project, we focused on data cleaning and preprocessi
 ## 4. Data Science Workflow 
 
 ### Data Cleaning and Preprocessing
-#### (Data Cleaning-Preprocessing.ipynb file)
+#### (See Data Cleaning-Preprocessing.ipynb file)
   
 In this initial phase of the project, we first started by loading the dataset, specifying the correct format (ISO-8859-1). Then we checked for missing values, drop the columns with highest missing values and verified if the rest of the variables with missing values were significant. Then we removed the columns that were not necessary for the model like Customer name, Customer email, Customer password, the IDs from Customer, Orders and Products and others.
 
