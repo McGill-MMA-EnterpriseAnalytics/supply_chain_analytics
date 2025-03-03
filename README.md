@@ -1,5 +1,11 @@
 # Analyzing Product Delays & ​Lateness Risk in ​Supply Chain​
 
+Team Members: 
+Yina Liang Li – Business Analyst – yina6202​
+Liliana Garcia Caraballo – Data Analyst – lilianapgarciac​
+Mirza Abubacker – Machine Learning Engineer - ThisIsMirk​
+Kevin Wang – Data Scientist - Kevin-Wang-McGill​
+
 ## 1. Project Overview
 In the world of logistics and e-commerce, on-time delivery is crucial for maintaining customer satisfaction and operational efficiency. This project explores the factors contributing to late deliveries, using statistical analysis and machine learning to uncover key insights.
 
