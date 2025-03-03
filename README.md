@@ -2,8 +2,11 @@
 
 Team Members: 
 Yina Liang Li – Business Analyst – yina6202​
+
 Liliana Garcia Caraballo – Data Analyst – lilianapgarciac​
+
 Mirza Abubacker – Machine Learning Engineer - ThisIsMirk​
+
 Kevin Wang – Data Scientist - Kevin-Wang-McGill​
 
 ## 1. Project Overview
