@@ -108,7 +108,7 @@ The model was then trained on the whole training set and then tested on the test
 
 We deployed an Artificial Neural Network (ANN) with a three-layer architecture (128-64-32 neurons) to analyze delivery risk patterns. The model used a dropout rate of 0.2 and batch size of 64, converging quickly during training. The final test accuracy of 70.42%. Our feature selection process highlighted that "Days for shipment (scheduled)" and shipping mode were consistently the most influential variables across modeling approaches, aligning with our causal inference findings.
 
-### 5. Conclusion
+## 5. Conclusion
 
 We can conclude that Standard shipping reduces lateness risk (by 41.7 percentage points) compared to non-standard options.​ Also, First-Class and Second-Class shipping have higher lateness risk than Standard or Same-Day options.​ The most influential factor is the scheduled shipping time, indicating that delivery timing policies have a stronger impact on delays than other logistical or economic factors. This suggests that Standard shipping should be promoted to customers to balance efficiency and cost.​
 
