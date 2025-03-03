@@ -16,7 +16,7 @@ By leveraging SOTA data science techniques, we identify the most influential fac
 
 Timely delivery is a competitive advantage. By understanding the root causes of late shipments, companies can reduce costs, improve efficiency, and enhance customer trust.
 
-## In the initial phase of our project, we focused on data cleaning and preprocessing to ensure the dataset's quality and suitability for analysis. The key steps undertaken include:​
+In the initial phase of our project, we focused on data cleaning and preprocessing to ensure the dataset's quality and suitability for analysis. The key steps undertaken include:​
 
 ## 4. Data Science Workflow 
 
